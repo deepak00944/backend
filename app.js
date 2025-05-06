@@ -8,11 +8,7 @@ dotenv.config()
 const app = express()
 
 app.use(express.json());
-app.use(cors({
-    origin: 'https://task-manger-frontend-eight.vercel.app/', // Replace with your deployed frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-}));
+app.use(cors({ origin: true, credentials: true }));
 
 app.use("/api/task", taskRoutes);
 
